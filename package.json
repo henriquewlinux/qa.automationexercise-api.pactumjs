@@ -1,0 +1,17 @@
+{
+    "scripts": {
+        "test": "mocha \"src/tests/**/*.js\" --recursive --reporter mochawesome --reporter-options reportDir=reports,reportFilename=test-report"
+    },
+    "devDependencies": {
+        "mocha": "^11.7.5",
+        "mochawesome": "^7.1.4",
+        "pactum": "^3.9.1"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^9.8.0",
+        "chai": "^6.2.2",
+        "dotenv": "^17.3.1",
+        "faker-js": "^1.0.0",
+        "joi": "^18.0.2"
+    }
+}

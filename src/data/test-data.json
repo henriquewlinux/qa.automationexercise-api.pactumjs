@@ -1,0 +1,35 @@
+{
+    "requestBody": {
+        "createAccount": {
+            "nome": "HBS tests",
+            "email": "testing@hbs.com.br",
+            "password": "teste",
+            "administrador": "true"
+        },
+        "createProduct": {
+            "nome": "Produto x",
+            "preco": 470,
+            "descricao": "Mouse",
+            "quantidade": 381
+        }
+    },
+    "response": {
+        "users": {
+            "createSuccess": "Cadastro realizado com sucesso",
+            "emailAlreadyUsed": "Este email já está sendo usado",
+            "invalidEmail": "email deve ser um email válido",
+            "deleteSuccess": "Registro excluído com sucesso",
+            "deleteNotFound": "Nenhum registro excluído"
+        },
+        "login": {
+            "success": "Login realizado com sucesso",
+            "invalidCredentials": "Email e/ou senha inválidos",
+            "missingPassword": "password não pode ficar em branco",
+            "missingEmail": "email não pode ficar em branco"
+        },
+        "products": {
+            "createSuccess": "Cadastro realizado com sucesso",
+            "nameAlreadyUsed": "Já existe produto com esse nome"
+        }
+    }
+}

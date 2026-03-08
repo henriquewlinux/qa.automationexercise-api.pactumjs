@@ -5,7 +5,7 @@ const HeadersBuilder = require('../../builders/headers-builder.js');
 async function postLogin(email, password) {
     const headers = new HeadersBuilder()
         .withContentType('application/json')
-        .build()
+        .build();
 
     return await
         spec()
@@ -14,13 +14,13 @@ async function postLogin(email, password) {
             .withJson({
                 "email": email,
                 "password": password
-            })
+            });
 }
 
 async function getToken(email, password) {
     const headers = new HeadersBuilder()
         .withContentType('application/json')
-        .build()
+        .build();
 
     let token = await
         spec()
@@ -29,9 +29,9 @@ async function getToken(email, password) {
             .withJson({
                 "email": email,
                 "password": password
-            })
+            });
 
-    return token.json.authorization
+    return token.json.authorization;
 }
 
 module.exports = { postLogin, getToken };

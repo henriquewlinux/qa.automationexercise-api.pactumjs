@@ -6,12 +6,12 @@ class CreateProductBuilder {
     }
 
     withName(name) {
-        this.book.nome = name
-        return this
+        this.book.nome = name;
+        return this;
     }
 
     build() {
-        return this.book
+        return this.book;
     }
 }
 

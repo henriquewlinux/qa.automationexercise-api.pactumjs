@@ -7,13 +7,13 @@ async function postProduct(data, token) {
     const headers = new HeadersBuilder()
         .withContentType('application/json')
         .withAuthorization(token)
-        .build()
+        .build();
 
     return await
         spec()
             .post(`${process.env.URL}/produtos`)
             .withHeaders(headers)
-            .withJson(data)
+            .withJson(data);
 }
 
 async function postCreateProduct(token) {
@@ -23,20 +23,20 @@ async function postCreateProduct(token) {
 
     const product = new CreateProductBuilder()
         .withName(faker.commerce.productName())
-        .build()
+        .build();
 
     const headers = new HeadersBuilder()
         .withContentType('application/json')
         .withAuthorization(token)
-        .build()
+        .build();
 
     const response = await
         spec()
             .post(`${process.env.URL}/produtos`)
             .withHeaders(headers)
-            .withJson(product)
+            .withJson(product);
 
-    return { _id: response.json._id, nome: product.nome }
+    return { _id: response.json._id, nome: product.nome };
 }
 
 module.exports = { postProduct, postCreateProduct };

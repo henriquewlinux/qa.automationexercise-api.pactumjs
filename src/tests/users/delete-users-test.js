@@ -10,32 +10,32 @@ describe('Tests referent route DELETE /usuarios', async () => {
   it('Verify delete user success', async () => {
 
     // Arrange
-    const id = await postCreateUserAndGetId()
+    const id = await postCreateUserAndGetId();
 
     // Action
-    response = await deleteUser(id)
+    const response = await deleteUser(id);
 
     // Assert
-    expect(response.statusCode).to.eq(200)
+    expect(response.statusCode).to.eq(200);
     expect(response.json.message).to.equal(messages.deleteSuccess);
 
     // Assert Schema
-    Joi.assert(response.json, schema.deleteUserSuccessSchema)
-  })
+    Joi.assert(response.json, schema.deleteUserSuccessSchema);
+  });
 
   it('Verify failure delete user when id is invalid', async () => {
 
     // Arrange
-    const id = 'invalidId000'
+    const id = 'invalidId000';
 
     // Action
-    response = await deleteUser(id)
+    const response = await deleteUser(id);
 
     // Assert
-    expect(response.statusCode).to.eq(200)
+    expect(response.statusCode).to.eq(200);
     expect(response.json.message).to.equal(messages.deleteNotFound);
 
     // Assert Schema
-    Joi.assert(response.json, schema.deleteUserFailureSchema)
-  })
+    Joi.assert(response.json, schema.deleteUserFailureSchema);
+  });
 });

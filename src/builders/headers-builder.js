@@ -1,30 +1,30 @@
 class HeadersBuilder {
     constructor() {
-        this.headers = {}
+        this.headers = {};
     }
 
     withContentType(contentType) {
-        this.headers["Content-Type"] = contentType
-        return this
+        this.headers["Content-Type"] = contentType;
+        return this;
     }
 
     withCookie(token) {
-        this.headers["Cookie"] = `token=${token}`
-        return this
+        this.headers["Cookie"] = `token=${token}`;
+        return this;
     }
 
     withAuthorization(token) {
-        this.headers["Authorization"] = token
-        return this
+        this.headers["Authorization"] = token;
+        return this;
     }
 
     withAccept(accept){
-        this.headers["Accept"] = accept
-        return this
+        this.headers["Accept"] = accept;
+        return this;
     }
 
     build() {
-        return this.headers
+        return this.headers;
     }
 }
 

@@ -6,12 +6,12 @@ class CreateUserBuilder {
     }
 
     withWriter(email) {
-        this.book.email = email
-        return this
+        this.book.email = email;
+        return this;
     }
 
     build() {
-        return this.book
+        return this.book;
     }
 }
 

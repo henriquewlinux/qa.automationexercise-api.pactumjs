@@ -10,36 +10,36 @@ describe('Tests referent route GET /produtos', async () => {
   it('Verify get product success', async () => {
 
     // Arrange
-    const data = await postCreateUser()
-    const token = await getToken(data.email, data.password)
-    const { _id, nome } = await postCreateProduct(token)
+    const data = await postCreateUser();
+    const token = await getToken(data.email, data.password);
+    const { _id, nome } = await postCreateProduct(token);
 
     // Action
-    response = await getProduct(_id)
+    const response = await getProduct(_id);
 
     // Assert
-    expect(response.statusCode).to.eq(200)
-    expect(response.json.quantidade).to.eq(1)
+    expect(response.statusCode).to.eq(200);
+    expect(response.json.quantidade).to.eq(1);
     expect(response.json.produtos[0].nome).to.equal(nome);
 
     // Assert Schema
-    Joi.assert(response.json, schema.getProductSuccessSchema)
-  })
+    Joi.assert(response.json, schema.getProductSuccessSchema);
+  });
 
   it('Verify get product returns empty when id not found', async () => {
 
     // Arrange
-    const id = 'invalidId000'
+    const id = 'invalidId000';
 
     // Action
-    response = await getProduct(id)
+    const response = await getProduct(id);
 
     // Assert
-    expect(response.statusCode).to.eq(200)
-    expect(response.json.quantidade).to.eq(0)
-    expect(response.json.produtos).to.have.length(0)
+    expect(response.statusCode).to.eq(200);
+    expect(response.json.quantidade).to.eq(0);
+    expect(response.json.produtos).to.have.length(0);
 
     // Assert Schema
-    Joi.assert(response.json, schema.getProductEmptySchema)
-  })
+    Joi.assert(response.json, schema.getProductEmptySchema);
+  });
 });

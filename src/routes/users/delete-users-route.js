@@ -6,12 +6,12 @@ async function deleteUser(id) {
 
     const headers = new HeadersBuilder()
         .withContentType('application/json')
-        .build()
+        .build();
 
     return await
         spec()
             .delete(`${process.env.URL}/usuarios/${id}`)
-            .withHeaders(headers)
+            .withHeaders(headers);
 }
 
 module.exports = { deleteUser };

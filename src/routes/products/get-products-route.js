@@ -6,13 +6,13 @@ async function getProduct(id) {
 
     const headers = new HeadersBuilder()
         .withContentType('application/json')
-        .build()
+        .build();
 
     return await
         spec()
             .get(`${process.env.URL}/produtos`)
             .withHeaders(headers)
-            .withQueryParams('_id', id)
+            .withQueryParams('_id', id);
 }
 
 module.exports = { getProduct };
